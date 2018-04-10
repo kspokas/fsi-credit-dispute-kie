@@ -1,0 +1,1 @@
+{"id":"4a140565-ab45-4097-b64f-f3257e6c9661","name":"ApproveFraudCredit-taskform.frm","model":{"taskName":"ApproveFraudCredit","processId":"CreditCardDisputeCaseNew.NewFraudDispute","properties":[],"formModelType":"org.kie.workbench.common.forms.jbpm.model.authoring.task.TaskFormModel"},"fields":[],"layoutTemplate":{"version":2,"style":"FLUID","layoutProperties":{},"rows":[]}}
