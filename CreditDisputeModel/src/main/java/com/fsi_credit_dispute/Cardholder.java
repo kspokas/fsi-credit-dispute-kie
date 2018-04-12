@@ -8,14 +8,14 @@ public class Cardholder implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "State Code")
+	@org.kie.api.definition.type.Label("State Code")
 	private java.lang.String stateCode;
-	@org.kie.api.definition.type.Label(value = "Age")
+	@org.kie.api.definition.type.Label("Age")
 	private java.lang.Integer age;
-	@org.kie.api.definition.type.Label(value = "Cardholder Status")
+	@org.kie.api.definition.type.Label("Cardholder Status")
 	private java.lang.String status;
-	@org.kie.api.definition.type.Label(value = "Max Age of Charge Prior to Dispute")
-	private java.lang.Integer maxDaysElapsed;
+	@org.kie.api.definition.type.Label(value = "Incident Count (last 3 years)")
+	private java.lang.Integer incidentCount;
 
 	public Cardholder() {
 	}
@@ -44,20 +44,20 @@ public class Cardholder implements java.io.Serializable {
 		this.status = status;
 	}
 
-	public java.lang.Integer getMaxDaysElapsed() {
-		return this.maxDaysElapsed;
+	public java.lang.Integer getIncidentCount() {
+		return this.incidentCount;
 	}
 
-	public void setMaxDaysElapsed(java.lang.Integer maxDaysElapsed) {
-		this.maxDaysElapsed = maxDaysElapsed;
+	public void setIncidentCount(java.lang.Integer incidentCount) {
+		this.incidentCount = incidentCount;
 	}
 
 	public Cardholder(java.lang.String stateCode, java.lang.Integer age,
-			java.lang.String status, java.lang.Integer maxDaysElapsed) {
+			java.lang.String status, java.lang.Integer incidentCount) {
 		this.stateCode = stateCode;
 		this.age = age;
 		this.status = status;
-		this.maxDaysElapsed = maxDaysElapsed;
+		this.incidentCount = incidentCount;
 	}
 
 }
