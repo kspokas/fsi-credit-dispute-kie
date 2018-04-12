@@ -6,12 +6,36 @@ package com.fsi_credit_dispute;
 
 public class AdditionalInformation implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public AdditionalInformation() {
-    }
+	@org.kie.api.definition.type.Label(value = "Question ID")
+	private java.lang.Integer questionId;
+	@org.kie.api.definition.type.Label(value = "Answer Value")
+	private java.lang.String answerValue;
 
+	public AdditionalInformation() {
+	}
 
+	public java.lang.Integer getQuestionId() {
+		return this.questionId;
+	}
 
+	public void setQuestionId(java.lang.Integer questionId) {
+		this.questionId = questionId;
+	}
+
+	public java.lang.String getAnswerValue() {
+		return this.answerValue;
+	}
+
+	public void setAnswerValue(java.lang.String answerValue) {
+		this.answerValue = answerValue;
+	}
+
+	public AdditionalInformation(java.lang.Integer questionId,
+			java.lang.String answerValue) {
+		this.questionId = questionId;
+		this.answerValue = answerValue;
+	}
 
 }
