@@ -6,12 +6,58 @@ package com.fsi_credit_dispute;
 
 public class Cardholder implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Cardholder() {
-    }
+	@org.kie.api.definition.type.Label(value = "State Code")
+	private java.lang.String stateCode;
+	@org.kie.api.definition.type.Label(value = "Age")
+	private java.lang.Integer age;
+	@org.kie.api.definition.type.Label(value = "Cardholder Status")
+	private java.lang.String status;
+	@org.kie.api.definition.type.Label(value = "Max Age of Charge Prior to Dispute")
+	private java.lang.Integer maxDaysElapsed;
 
+	public Cardholder() {
+	}
 
+	public java.lang.String getStateCode() {
+		return this.stateCode;
+	}
 
+	public void setStateCode(java.lang.String stateCode) {
+		this.stateCode = stateCode;
+	}
+
+	public java.lang.Integer getAge() {
+		return this.age;
+	}
+
+	public void setAge(java.lang.Integer age) {
+		this.age = age;
+	}
+
+	public java.lang.String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(java.lang.String status) {
+		this.status = status;
+	}
+
+	public java.lang.Integer getMaxDaysElapsed() {
+		return this.maxDaysElapsed;
+	}
+
+	public void setMaxDaysElapsed(java.lang.Integer maxDaysElapsed) {
+		this.maxDaysElapsed = maxDaysElapsed;
+	}
+
+	public Cardholder(java.lang.String stateCode, java.lang.Integer age,
+			java.lang.String status, java.lang.Integer maxDaysElapsed) {
+		this.stateCode = stateCode;
+		this.age = age;
+		this.status = status;
+		this.maxDaysElapsed = maxDaysElapsed;
+	}
 
 }
