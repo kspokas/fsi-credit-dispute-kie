@@ -13,8 +13,11 @@ public class AdditionalInformation implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Answer Value")
 	private java.lang.String answerValue;
 
-	@org.kie.api.definition.type.Label(value = "Question Type")
+	@org.kie.api.definition.type.Label("Question Type")
 	private java.lang.String questionType;
+
+	@org.kie.api.definition.type.Label(value = "Question Prompt")
+	private java.lang.String questionPrompt;
 
 	public AdditionalInformation() {
 	}
@@ -43,11 +46,21 @@ public class AdditionalInformation implements java.io.Serializable {
 		this.questionType = questionType;
 	}
 
+	public java.lang.String getQuestionPrompt() {
+		return this.questionPrompt;
+	}
+
+	public void setQuestionPrompt(java.lang.String questionPrompt) {
+		this.questionPrompt = questionPrompt;
+	}
+
 	public AdditionalInformation(java.lang.Integer questionId,
-			java.lang.String answerValue, java.lang.String questionType) {
+			java.lang.String answerValue, java.lang.String questionType,
+			java.lang.String questionPrompt) {
 		this.questionId = questionId;
 		this.answerValue = answerValue;
 		this.questionType = questionType;
+		this.questionPrompt = questionPrompt;
 	}
 
 }
