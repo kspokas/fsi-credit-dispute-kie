@@ -1,2 +1,12 @@
 package com.fsi_credit_dispute;
 
+rule "Get county name"
+    agenda-group "additional-info"
+when Cardholder( state == "VA" )
+then
+    AdditionalInfo additionalInfo = new AdditionalInfo();
+    additionalInfo.setQuestionId(1);
+    additionalInfo.setQuestionText("What county do you reside in?");
+    additionalInfo.setQuestionType("string");
+    insert (additionalInfo);
+end;
