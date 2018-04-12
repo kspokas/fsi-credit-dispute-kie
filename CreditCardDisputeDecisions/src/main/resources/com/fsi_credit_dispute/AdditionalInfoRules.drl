@@ -1,7 +1,7 @@
 package com.fsi_credit_dispute;
 
 rule "Get county name"
-    agenda-group "additional-info"
+    ruleflow-group "additional-info"
 when Cardholder( stateCode == "VA" )
 then
     AdditionalInformation additionalInfo = new AdditionalInformation();
