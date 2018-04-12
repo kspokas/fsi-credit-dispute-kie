@@ -8,10 +8,13 @@ public class AdditionalInformation implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Question ID")
+	@org.kie.api.definition.type.Label("Question ID")
 	private java.lang.Integer questionId;
-	@org.kie.api.definition.type.Label(value = "Answer Value")
+	@org.kie.api.definition.type.Label("Answer Value")
 	private java.lang.String answerValue;
+
+	@org.kie.api.definition.type.Label(value = "Question Type")
+	private java.lang.String questionType;
 
 	public AdditionalInformation() {
 	}
@@ -32,10 +35,19 @@ public class AdditionalInformation implements java.io.Serializable {
 		this.answerValue = answerValue;
 	}
 
+	public java.lang.String getQuestionType() {
+		return this.questionType;
+	}
+
+	public void setQuestionType(java.lang.String questionType) {
+		this.questionType = questionType;
+	}
+
 	public AdditionalInformation(java.lang.Integer questionId,
-			java.lang.String answerValue) {
+			java.lang.String answerValue, java.lang.String questionType) {
 		this.questionId = questionId;
 		this.answerValue = answerValue;
+		this.questionType = questionType;
 	}
 
 }
