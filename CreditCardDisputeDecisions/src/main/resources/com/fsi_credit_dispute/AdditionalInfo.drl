@@ -6,7 +6,7 @@ when Cardholder( state == "VA" )
 then
     AdditionalInfo additionalInfo = new AdditionalInfo();
     additionalInfo.setQuestionId(1);
-    additionalInfo.setQuestionText("What county do you reside in?");
+    additionalInfo.setQuestionPrompt("What county do you reside in?");
     additionalInfo.setQuestionType("string");
     insert (additionalInfo);
 end;
