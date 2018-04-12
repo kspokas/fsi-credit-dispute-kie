@@ -1,5 +1,8 @@
 package com.fsi_credit_dispute;
 
+import com.fsi_credit_dispute.AdditionalInformation;
+import com.fsi_credit_dispute.Cardholder;
+
 rule "Get county name"
     agenda-group "additional-info"
 when Cardholder( state == "VA" )
