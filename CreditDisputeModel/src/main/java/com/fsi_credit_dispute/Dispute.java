@@ -8,12 +8,14 @@ public class Dispute implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Total Dispute Amount")
+	@org.kie.api.definition.type.Label("Total Dispute Amount")
 	private java.lang.Double totalDisputeAmount;
-	@org.kie.api.definition.type.Label(value = "Line Item Count")
+	@org.kie.api.definition.type.Label("Line Item Count")
 	private java.lang.Integer lineItemCount;
-	@org.kie.api.definition.type.Label(value = "Oldest Disputed Charge (days)")
+	@org.kie.api.definition.type.Label("Oldest Disputed Charge (days)")
 	private java.lang.Integer maxDaysElapsed;
+
+	private java.util.List<com.fsi_credit_dispute.AdditionalInformation> additionalInformation;
 
 	public Dispute() {
 	}
@@ -42,11 +44,24 @@ public class Dispute implements java.io.Serializable {
 		this.maxDaysElapsed = maxDaysElapsed;
 	}
 
-	public Dispute(java.lang.Double totalDisputeAmount,
-			java.lang.Integer lineItemCount, java.lang.Integer maxDaysElapsed) {
+	public java.util.List<com.fsi_credit_dispute.AdditionalInformation> getAdditionalInformation() {
+		return this.additionalInformation;
+	}
+
+	public void setAdditionalInformation(
+			java.util.List<com.fsi_credit_dispute.AdditionalInformation> additionalInformation) {
+		this.additionalInformation = additionalInformation;
+	}
+
+	public Dispute(
+			java.lang.Double totalDisputeAmount,
+			java.lang.Integer lineItemCount,
+			java.lang.Integer maxDaysElapsed,
+			java.util.List<com.fsi_credit_dispute.AdditionalInformation> additionalInformation) {
 		this.totalDisputeAmount = totalDisputeAmount;
 		this.lineItemCount = lineItemCount;
 		this.maxDaysElapsed = maxDaysElapsed;
+		this.additionalInformation = additionalInformation;
 	}
 
 }
