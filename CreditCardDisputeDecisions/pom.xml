@@ -7,6 +7,14 @@
   <version>1.0.0</version>
   <name>CreditCardDisputeDecisions</name>
   <description>Holds the DMN and Drools assets for dynamic logic in case</description>
+  <dependencies>
+    <dependency>
+      <groupId>com.fsi-credit-dispute</groupId>
+      <artifactId>CreditDisputeModel</artifactId>
+      <version>1.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
   <repositories>
     <repository>
       <id>guvnor-m2-repo</id>
