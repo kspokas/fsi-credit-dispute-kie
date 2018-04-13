@@ -1,12 +1,23 @@
 package com.fsi.creditcarddisputecase;
 
-rule "Get county name"
+rule "Online purchases DC Area by minor"
     ruleflow-group "additional-info"
-when Cardholder( stateCode == "VA" )
+when Cardholder( stateCode in ("VA","DC","MD"), age < 18 )
 then
     AdditionalInformation additionalInfo = new AdditionalInformation();
     additionalInfo.setQuestionId(1);
-    additionalInfo.setQuestionPrompt("What county do you reside in?");
-    additionalInfo.setQuestionType("string");
+    additionalInfo.setQuestionPrompt("Were any charges related to online purchases?");
+    additionalInfo.setQuestionType("boolean");
+    insert (additionalInfo);
+end;
+
+rule "New York travel rule for Gold level cardholders"
+    ruleflow-group "additional-info"
+when Cardholder ( stateCode == "NY" and status == "GOLD" )
+then
+    AdditionalInformation additionalInfo = new AdditionalInformation();
+    additionalInfo.setQuestionId(2);
+    additionalInfo.setQuestionPrompt("Were you on travel when the disputed charges occurred?");
+    additionalInfo.setQuestionType("boolean");
     insert (additionalInfo);
 end;
