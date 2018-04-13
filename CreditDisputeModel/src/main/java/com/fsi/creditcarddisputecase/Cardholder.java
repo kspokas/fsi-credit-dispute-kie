@@ -17,6 +17,9 @@ public class Cardholder implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Incident Count (last 3 years)")
 	private java.lang.Integer incidentCount;
 
+	@org.kie.api.definition.type.Label(value = "Balance Ratio ")
+	private java.lang.Float balanceRatio;
+
 	public Cardholder() {
 	}
 
@@ -52,12 +55,22 @@ public class Cardholder implements java.io.Serializable {
 		this.incidentCount = incidentCount;
 	}
 
+	public java.lang.Float getBalanceRatio() {
+		return this.balanceRatio;
+	}
+
+	public void setBalanceRatio(java.lang.Float balanceRatio) {
+		this.balanceRatio = balanceRatio;
+	}
+
 	public Cardholder(java.lang.String stateCode, java.lang.Integer age,
-			java.lang.String status, java.lang.Integer incidentCount) {
+			java.lang.String status, java.lang.Integer incidentCount,
+			java.lang.Float balanceRatio) {
 		this.stateCode = stateCode;
 		this.age = age;
 		this.status = status;
 		this.incidentCount = incidentCount;
+		this.balanceRatio = balanceRatio;
 	}
 
 }
