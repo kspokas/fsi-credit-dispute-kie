@@ -2,11 +2,11 @@
   <tableName>AdditionalStateRulesTable</tableName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
-    <width>-1</width>
+    <width>50</width>
   </rowNumberCol>
   <descriptionCol>
     <hideColumn>false</hideColumn>
-    <width>-1</width>
+    <width>150</width>
   </descriptionCol>
   <metadataCols/>
   <attributeCols/>
@@ -23,12 +23,12 @@
             <isOtherwise>false</isOtherwise>
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
-          <width>-1</width>
+          <width>100</width>
           <header>Age</header>
           <constraintValueType>3</constraintValueType>
           <factField>age</factField>
           <fieldType>Integer</fieldType>
-          <operator>==</operator>
+          <operator></operator>
           <parameters/>
         </condition-column52>
         <condition-column52>
@@ -38,28 +38,12 @@
             <isOtherwise>false</isOtherwise>
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
-          <width>-1</width>
+          <width>100</width>
           <header>State Code</header>
           <constraintValueType>1</constraintValueType>
           <factField>stateCode</factField>
           <fieldType>String</fieldType>
-          <operator>==</operator>
-          <parameters/>
-        </condition-column52>
-        <condition-column52>
-          <typedDefaultValue>
-            <valueString></valueString>
-            <dataType>STRING</dataType>
-            <isOtherwise>false</isOtherwise>
-          </typedDefaultValue>
-          <hideColumn>false</hideColumn>
-          <width>-1</width>
-          <header>Status</header>
-          <constraintValueType>1</constraintValueType>
-          <factField>status</factField>
-          <fieldType>String</fieldType>
-          <operator>==</operator>
-          <valueList>GOLD,SILVER,STANDARD</valueList>
+          <operator>in</operator>
           <parameters/>
         </condition-column52>
       </conditions>
@@ -76,7 +60,7 @@
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
-      <width>-1</width>
+      <width>100</width>
       <header>Question ID</header>
       <factType>AdditionalInformation</factType>
       <boundName>f2</boundName>
@@ -91,7 +75,7 @@
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
-      <width>-1</width>
+      <width>100</width>
       <header>Question Type</header>
       <factType>AdditionalInformation</factType>
       <boundName>f2</boundName>
@@ -107,7 +91,7 @@
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
-      <width>-1</width>
+      <width>623</width>
       <header>Question Prompt</header>
       <factType>AdditionalInformation</factType>
       <boundName>f2</boundName>
@@ -159,9 +143,9 @@
   <data>
     <list>
       <value>
-        <valueNumeric>1</valueNumeric>
+        <valueNumeric class="int">1</valueNumeric>
         <valueString></valueString>
-        <dataType>NUMERIC_BIGDECIMAL</dataType>
+        <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -169,22 +153,38 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../conditionPatterns/Pattern52/conditions/condition-column52/typedDefaultValue"/>
-      <value reference="../../../conditionPatterns/Pattern52/conditions/condition-column52[2]/typedDefaultValue"/>
       <value>
-        <valueString>GOLD</valueString>
+        <valueString>&lt; 16</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52/typedDefaultValue"/>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
-      <value reference="../../../actionCols/insert-fact-column52[3]/typedDefaultValue"/>
+      <value>
+        <valueString>CA,NY,DE</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueNumeric class="int">1</valueNumeric>
+        <valueString></valueString>
+        <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>boolean</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>Have you notified your parent or guardian about the disputed transactions?</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
-        <valueNumeric>2</valueNumeric>
+        <valueNumeric class="int">2</valueNumeric>
         <valueString></valueString>
-        <dataType>NUMERIC_BIGDECIMAL</dataType>
+        <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -192,22 +192,38 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../conditionPatterns/Pattern52/conditions/condition-column52/typedDefaultValue"/>
-      <value reference="../../../conditionPatterns/Pattern52/conditions/condition-column52[2]/typedDefaultValue"/>
       <value>
-        <valueString>SILVER</valueString>
+        <valueString>&lt; 17</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52/typedDefaultValue"/>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
-      <value reference="../../../actionCols/insert-fact-column52[3]/typedDefaultValue"/>
+      <value>
+        <valueString>VA,NM</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueNumeric class="int">1</valueNumeric>
+        <valueString></valueString>
+        <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>boolean</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>Have you notified your parent or guardian about the disputed transactions?</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
-        <valueNumeric>3</valueNumeric>
+        <valueNumeric class="int">3</valueNumeric>
         <valueString></valueString>
-        <dataType>NUMERIC_BIGDECIMAL</dataType>
+        <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -215,16 +231,32 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../conditionPatterns/Pattern52/conditions/condition-column52/typedDefaultValue"/>
-      <value reference="../../../conditionPatterns/Pattern52/conditions/condition-column52[2]/typedDefaultValue"/>
       <value>
-        <valueString>STANDARD</valueString>
+        <valueString>&lt; 21</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52/typedDefaultValue"/>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
-      <value reference="../../../actionCols/insert-fact-column52[3]/typedDefaultValue"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueNumeric class="int">1</valueNumeric>
+        <valueString></valueString>
+        <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>boolean</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>Have you notified your parent or guardian about the disputed transactions?</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
   </data>
 </decision-table52>
