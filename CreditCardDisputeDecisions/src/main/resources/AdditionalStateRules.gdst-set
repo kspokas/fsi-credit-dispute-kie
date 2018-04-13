@@ -1,3 +1,21 @@
 <graph>
-  <entries/>
+  <entries>
+    <entry>
+      <pathHead class="org.uberfire.backend.vfs.impl.ObservablePathImpl">
+        <path class="org.uberfire.backend.vfs.PathFactory$PathImpl">
+          <uri>default://master@fsi-credit-dispute-myrepo/CreditCardDisputeDecisions/src/main/resources/AdditionalStateRulesTable.gdst</uri>
+          <fileName>AdditionalStateRulesTable.gdst</fileName>
+          <attributes/>
+          <hasVersionSupport>true</hasVersionSupport>
+        </path>
+      </pathHead>
+      <pathVersion class="org.uberfire.backend.vfs.PathFactory$PathImpl">
+        <uri>default://5f92dce8f703af8af42f9ef646b67498123a1f37@fsi-credit-dispute-myrepo/CreditCardDisputeDecisions/src/main/resources/AdditionalStateRulesTable.gdst</uri>
+        <fileName>AdditionalStateRulesTable.gdst</fileName>
+        <hasVersionSupport>false</hasVersionSupport>
+      </pathVersion>
+      <x>-400.0</x>
+      <y>-1000.0</y>
+    </entry>
+  </entries>
 </graph>
