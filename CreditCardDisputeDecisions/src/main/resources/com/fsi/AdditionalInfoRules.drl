@@ -13,7 +13,7 @@ end;
 
 rule "New York travel rule for Gold level cardholders"
     ruleflow-group "additional-info"
-when Cardholder ( stateCode == "NY" and status == "GOLD" )
+when Cardholder ( stateCode == "NY", status == "GOLD" )
 then
     AdditionalInformation additionalInfo = new AdditionalInformation();
     additionalInfo.setQuestionId(2);
