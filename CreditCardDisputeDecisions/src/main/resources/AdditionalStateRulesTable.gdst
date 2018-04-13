@@ -239,7 +239,7 @@
       <value>
         <valueString></valueString>
         <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
+        <isOtherwise>true</isOtherwise>
       </value>
       <value>
         <valueNumeric class="int">1</valueNumeric>

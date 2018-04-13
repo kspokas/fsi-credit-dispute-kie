@@ -10,7 +10,7 @@
         </path>
       </pathHead>
       <pathVersion class="org.uberfire.backend.vfs.PathFactory$PathImpl">
-        <uri>default://b3aec1249482694fa0a00b0ec2874f0bef2296b8@fsi-credit-dispute-myrepo/CreditCardDisputeDecisions/src/main/resources/AdditionalStateRulesTable.gdst</uri>
+        <uri>default://3e25245da0cb56390a1c9224c07f28219b916d85@fsi-credit-dispute-myrepo/CreditCardDisputeDecisions/src/main/resources/AdditionalStateRulesTable.gdst</uri>
         <fileName>AdditionalStateRulesTable.gdst</fileName>
         <hasVersionSupport>false</hasVersionSupport>
       </pathVersion>
