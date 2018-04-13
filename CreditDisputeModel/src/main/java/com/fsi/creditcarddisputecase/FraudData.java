@@ -44,12 +44,10 @@ public class FraudData implements java.io.Serializable {
 	public FraudData(
 			java.lang.Double totalDisputeAmount,
 			java.lang.Integer lineItemCount,
-			java.lang.Integer maxDaysElapsed,
-			java.util.List<com.fsi_credit_dispute.AdditionalInformation> additionalInformations) {
+			java.lang.Integer maxDaysElapsed) {
 		this.totalDisputeAmount = totalDisputeAmount;
 		this.lineItemCount = lineItemCount;
 		this.maxDaysElapsed = maxDaysElapsed;
-		this.additionalInformations = additionalInformations;
 	}
 
 	public java.lang.Float getTotalFraudAmount() {
