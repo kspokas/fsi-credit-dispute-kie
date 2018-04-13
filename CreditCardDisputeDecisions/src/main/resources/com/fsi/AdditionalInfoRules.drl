@@ -2,7 +2,7 @@ package com.fsi.creditcarddisputecase;
 
 rule "Online purchases DC Area by minor"
     ruleflow-group "additional-info"
-when Cardholder( stateCode in ("VA","DC","MD"), age < 18 )
+when Cardholder( stateCode in ("VA","DC","MD") )
 then
     AdditionalInformation additionalInfo = new AdditionalInformation();
     additionalInfo.setQuestionId(1);
