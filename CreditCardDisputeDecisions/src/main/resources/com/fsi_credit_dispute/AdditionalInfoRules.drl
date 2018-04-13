@@ -1,4 +1,4 @@
-package com.fsi_credit_dispute;
+package com.fsi.creditcarddisputecase;
 
 rule "Get county name"
     ruleflow-group "additional-info"
