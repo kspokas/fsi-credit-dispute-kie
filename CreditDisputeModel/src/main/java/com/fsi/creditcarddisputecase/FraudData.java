@@ -42,12 +42,17 @@ public class FraudData implements java.io.Serializable {
 	}
 
 	public FraudData(
-			java.lang.Double totalDisputeAmount,
+			java.lang.Float totalFraudAmount,
 			java.lang.Integer lineItemCount,
-			java.lang.Integer maxDaysElapsed) {
-		this.totalDisputeAmount = totalDisputeAmount;
+			java.lang.Integer maxDaysElapsed,
+			boolean automated,
+			java.lang.String customerStatus
+			) {
+		this.totalFraudAmount = totalFraudAmount;
 		this.lineItemCount = lineItemCount;
 		this.maxDaysElapsed = maxDaysElapsed;
+		this.automated = automated;
+		this.customerStatus = customerStatus;
 	}
 
 	public java.lang.Float getTotalFraudAmount() {
