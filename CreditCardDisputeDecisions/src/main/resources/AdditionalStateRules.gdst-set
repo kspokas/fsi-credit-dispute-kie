@@ -1,19 +1,13 @@
 <graph>
   <entries>
     <entry>
-      <pathHead class="org.uberfire.backend.vfs.impl.ObservablePathImpl">
-        <path class="org.uberfire.backend.vfs.PathFactory$PathImpl">
-          <uri>default://master@fsi-credit-dispute-myrepo/CreditCardDisputeDecisions/src/main/resources/AdditionalStateRulesTable.gdst</uri>
-          <fileName>AdditionalStateRulesTable.gdst</fileName>
-          <attributes/>
-          <hasVersionSupport>true</hasVersionSupport>
-        </path>
+      <pathHead class="org.uberfire.backend.vfs.PathFactory$PathImpl">
+        <uri>default://master@fsi-credit-dispute-myrepo/CreditCardDisputeDecisions/src/main/resources/MinimumAgeRules.gdst</uri>
+        <fileName>MinimumAgeRules.gdst</fileName>
+        <attributes/>
+        <hasVersionSupport>true</hasVersionSupport>
       </pathHead>
-      <pathVersion class="org.uberfire.backend.vfs.PathFactory$PathImpl">
-        <uri>default://3e25245da0cb56390a1c9224c07f28219b916d85@fsi-credit-dispute-myrepo/CreditCardDisputeDecisions/src/main/resources/AdditionalStateRulesTable.gdst</uri>
-        <fileName>AdditionalStateRulesTable.gdst</fileName>
-        <hasVersionSupport>false</hasVersionSupport>
-      </pathVersion>
+      <pathVersion class="org.uberfire.backend.vfs.PathFactory$PathImpl" reference="../pathHead"/>
       <x>-400.0</x>
       <y>-1000.0</y>
     </entry>
