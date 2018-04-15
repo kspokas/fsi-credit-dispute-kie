@@ -8,7 +8,7 @@
         <hasVersionSupport>true</hasVersionSupport>
       </pathHead>
       <pathVersion class="org.uberfire.backend.vfs.PathFactory$PathImpl">
-        <uri>default://c46e6933bdfde64d3a2cc112c9a82941567b98d7@fsi-credit-dispute-myrepo/CreditCardDisputeDecisions/src/main/resources/MinimumAgeRules.gdst</uri>
+        <uri>default://9bc4fc3f4f48550e09a19eabcaf803f6c03e9bc5@fsi-credit-dispute-myrepo/CreditCardDisputeDecisions/src/main/resources/MinimumAgeRules.gdst</uri>
         <fileName>MinimumAgeRules.gdst</fileName>
         <hasVersionSupport>false</hasVersionSupport>
       </pathVersion>
