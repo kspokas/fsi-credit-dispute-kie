@@ -9,7 +9,7 @@
   <description>Holds the DMN and Drools assets for dynamic logic in case</description>
   <dependencies>
     <dependency>
-      <groupId>com.fsi-credit-dispute</groupId>
+      <groupId>com.entando.bpm.fsi</groupId>
       <artifactId>credit-dispute-model</artifactId>
       <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
