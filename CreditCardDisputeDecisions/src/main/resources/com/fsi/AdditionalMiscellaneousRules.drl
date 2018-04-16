@@ -5,7 +5,7 @@ rule "Additional info check"
 when
 
 then
-    System.err.println("Looking for additional info!");
+    System.out.println("Looking for additional info!");
 end;
 
 rule "Online purchases DC Area by minor"
