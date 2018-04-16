@@ -42,7 +42,7 @@
             <resolver>mvel</resolver>
             <identifier>new org.jbpm.process.workitem.bpmn2.BusinessRuleTaskHandler("com.entando.bpm.fsi","credit-dispute-decisions","1.0-SNAPSHOT",10000)</identifier>
             <parameters/>
-            <name>BusinessRuleTask</name>
+            <name>DecisionTask</name>
         </work-item-handler>
     </work-item-handlers>
     <environment-entries/>
