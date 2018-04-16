@@ -29,3 +29,8 @@ then
     additionalInfo.setQuestionType("boolean");
     insert (additionalInfo);
 end;
+
+
+query "get-additional-info"
+    additionalInfo : AdditionalInformation()
+end;
