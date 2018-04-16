@@ -38,7 +38,7 @@ end;
 rule "Cleanup additional info"
     agenda-group "cleanup"
 when
-    $addtionalInfo : AdditionalInformation()
+    $additionalInfo : AdditionalInformation()
 then
     retract($additionalInfo);
 end;
