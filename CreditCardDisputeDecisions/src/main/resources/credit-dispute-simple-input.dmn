@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<semantic:definitions xmlns:semantic="http://www.omg.org/spec/DMN/20151101/dmn.xsd"
+  xmlns:feel="http://www.omg.org/spec/FEEL/20140401"
+  xmlns:tc="http://www.omg.org/spec/DMN/20160719/testcase"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  exporter="DMN Modeler" exporterVersion="6.0.6"
+  id="_98" 
+  name="credit-dispute-simple-input"
+  namespace="http://www.entando.com/dmn/definitions/_c540edb3-4b27-4577-8863-1cf0267762b3">
+  <semantic:extensionElements/>
+  <semantic:inputData id="_9187a8d0-d828-4f1c-9f97-fdebc80a6314" name="Age">
+    <semantic:variable id="_63d23703-b316-4cdf-9f47-7116a64f1f62" name="Age" typeRef="feel:number"/>
+  </semantic:inputData>
+  <semantic:inputData id="_a7124339-51f2-439d-b942-d47d234d9e49" name="Incident Count">
+    <semantic:variable id="_019ef394-cfd1-4cb9-b493-337d33889e91" name="Incident Count" typeRef="feel:number"/>
+  </semantic:inputData>
+  <semantic:inputData id="_ade23b6d-2106-4c06-9244-00cb4266fc15" name="Cardholder Status">
+    <semantic:variable id="_e3fa0d4e-f768-4f81-b0e0-9cf1fef9a5e8" name="Cardholder Status" typeRef="feel:string"/>
+  </semantic:inputData>
+  <semantic:inputData id="_09116efe-d20c-4570-be32-c59ea94cd238" name="Fraud Amount">
+    <semantic:variable id="_65149275-49a3-44bd-b07f-f16bd00b998a" name="Fraud Amount" typeRef="feel:number"/>
+  </semantic:inputData>
+  <semantic:decision id="_c4f764e7-52d0-489e-a1df-fe264a8615bf" name="Cardholder Risk Rating">
+    <semantic:variable id="_f8c4ea77-5b4d-4a18-a32a-fda883287cde" name="Cardholder Risk Rating" typeRef="feel:number"/>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_9187a8d0-d828-4f1c-9f97-fdebc80a6314"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_a7124339-51f2-439d-b942-d47d234d9e49"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_ade23b6d-2106-4c06-9244-00cb4266fc15"/>
+    </semantic:informationRequirement>
+    <semantic:decisionTable aggregation="SUM" hitPolicy="COLLECT" id="_5b93b3a2-e90b-49eb-9321-d54f2127885b" outputLabel="Cardholder Risk Rating">
+      <semantic:input id="_3346bcf3-f413-4387-8682-186a131bd26b">
+        <semantic:inputExpression typeRef="feel:number">
+          <semantic:text>Incident Count</semantic:text>
+        </semantic:inputExpression>
+      </semantic:input>
+      <semantic:input id="_3b3ae962-ef9a-4f64-a76e-5eea44207ff3">
+        <semantic:inputExpression typeRef="feel:string">
+          <semantic:text>Cardholder Status</semantic:text>
+        </semantic:inputExpression>
+      </semantic:input>
+      <semantic:input id="_b0228933-6857-468a-9390-0253f8d9366c">
+        <semantic:inputExpression typeRef="feel:number">
+          <semantic:text>Age</semantic:text>
+        </semantic:inputExpression>
+      </semantic:input>
+      <semantic:output id="_ac6b81d3-0bfe-48fd-b902-6797c9c270d2"/>
+      <semantic:rule id="_512908be-c4c7-4e92-8d57-2337b82b208c">
+        <semantic:inputEntry id="_73cf6ae3-0640-4e90-b96d-0c56b0607e06">
+          <semantic:text>&gt; 2</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_4689d5f3-29d4-44a1-801e-d3f056201012">
+          <semantic:text>"GOLD"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_e30c0958-06c1-4448-8e09-6c6b0fcfcead">
+          <semantic:text>-</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_74ca38ce-b8fc-41d7-a0e3-b95547791e0f">
+          <semantic:text>1</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_4cd91cee-fa92-4d8f-bbe5-3b455fd50f2f">
+        <semantic:inputEntry id="_c6df3afb-3808-432d-a777-03c19e9277b6">
+          <semantic:text>&gt; 2</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_c488aad3-45e9-4f01-b326-c53d9761bd96">
+          <semantic:text>"SILVER"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_72609a9f-df51-4423-add7-b346248ca134">
+          <semantic:text>-</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_4d2ceeff-958c-4b74-a9c4-473d440e747e">
+          <semantic:text>2</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_7fbe2ebe-f706-4a27-82c6-23ac0ffdeb15">
+        <semantic:inputEntry id="_a32c868f-60cf-4422-9a91-208c59ea5353">
+          <semantic:text>&gt; 2</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_c5f1d28e-7d95-433f-a2d6-0215326f4ee8">
+          <semantic:text>"STANDARD"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_3a385e0e-178b-4e5d-a2c4-02d88bd3411b">
+          <semantic:text>-</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_f07decca-ea2f-461b-97c0-a8e5eb960119">
+          <semantic:text>3</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_a2e68295-cf5a-4b08-9294-91fc2db0c1c9">
+        <semantic:inputEntry id="_8adf7289-5276-4f5d-a5e5-9160da538603">
+          <semantic:text>-</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_d09a2562-2dee-485c-9b39-aaeb703f1953">
+          <semantic:text>"SILVER"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_c5f0789b-a98c-4cf6-a5ab-777361e63ba2">
+          <semantic:text>&lt; 25</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_c79ce71f-8d50-4fe4-949d-46ed093b4d24">
+          <semantic:text>1</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_ca1f639a-9e29-4856-9a63-c387a9594022">
+        <semantic:inputEntry id="_95ddf6cc-b5e6-48ce-be57-d7ca93718872">
+          <semantic:text>-</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_27810bf4-1905-4a9f-b9d7-7314fc58e8fc">
+          <semantic:text>"STANDARD"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_cef04b56-ec84-4ee8-bc80-1f22739c5028">
+          <semantic:text>&lt; 25</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_62545ec8-e915-404c-a4ef-bd03363d14bf">
+          <semantic:text>2</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_ad42ce0c-c34f-4866-86d0-47050ce8e8aa">
+        <semantic:inputEntry id="_1b71f8f1-0b09-4c0c-838a-aca1fdbbeabd">
+          <semantic:text>-</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_e513c5e1-82e9-422e-bdb8-f02f10886e95">
+          <semantic:text>"STANDARD"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_7d22cc2d-e3e5-45f9-9127-2823f806c18c">
+          <semantic:text>&gt;= 25</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_a0f9c2ea-af8d-44a6-a9ef-1e59900fe471">
+          <semantic:text>1</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_7f26a4fd-a15e-4e2c-bdbf-351dfdec2605">
+        <semantic:inputEntry id="_b78b9c6f-c470-4c92-ac35-2c28d8d1afde">
+          <semantic:text>-</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_b4edee13-e04a-47bb-ac54-c4d839560540">
+          <semantic:text>-</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_7d47a95e-647b-495b-b8f2-18067495cde9">
+          <semantic:text>-</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_8ac3fc71-f8c2-4a93-a460-09554f3aa9c6">
+          <semantic:text>0</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+    </semantic:decisionTable>
+  </semantic:decision>
+  <semantic:decision id="_7806a972-6dc1-46b3-81e7-ff48ac763f0f" name="Dispute Risk Rating">
+    <semantic:variable id="_06a8e8ac-f501-4a35-af90-279ef1388028" name="Dispute Risk Rating" typeRef="feel:number"/>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_09116efe-d20c-4570-be32-c59ea94cd238"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_ade23b6d-2106-4c06-9244-00cb4266fc15"/>
+    </semantic:informationRequirement>
+    <semantic:decisionTable hitPolicy="UNIQUE" id="_90024631-620d-40da-aa91-c46d7d07b45b" outputLabel="Dispute Risk Rating">
+      <semantic:input id="_01578336-7015-4df8-91dd-8be120f8f661">
+        <semantic:inputExpression typeRef="feel:string">
+          <semantic:text>Cardholder Status</semantic:text>
+        </semantic:inputExpression>
+      </semantic:input>
+      <semantic:input id="_35b05a57-d0e0-4c89-be56-a36d52acf388">
+        <semantic:inputExpression typeRef="feel:number">
+          <semantic:text>Fraud Amount</semantic:text>
+        </semantic:inputExpression>
+      </semantic:input>
+      <semantic:output id="_53ce5c7b-40d3-4eb1-95e6-109871d14699"/>
+      <semantic:rule id="_87794d47-507b-4097-b881-8c64f32cb444">
+        <semantic:inputEntry id="_43391393-25d0-4bea-9b18-86688d2c574c">
+          <semantic:text>"STANDARD"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_bf9735cd-8aa1-457d-b44f-0b8ded5045cf">
+          <semantic:text>&lt; 100</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_182a23d9-d693-490c-82fb-f69ac7607716">
+          <semantic:text>1</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_27b008dc-d307-4d37-8630-a9ab27787811">
+        <semantic:inputEntry id="_65942df9-f860-4348-96e3-0764209884b7">
+          <semantic:text>"SILVER"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_fe68409e-f10e-4d9c-9e33-51768fea5655">
+          <semantic:text>&lt; 250</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_4ca4ee47-3b8b-4f9d-84ec-63d1a4f9e21a">
+          <semantic:text>1</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_2acdeb21-905b-49b2-ab81-afa96c00f016">
+        <semantic:inputEntry id="_c43f148c-0038-46d6-9627-f43f80c034f7">
+          <semantic:text>"GOLD"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_93d26cf1-5c28-4723-9813-783f96bec60b">
+          <semantic:text>&lt; 500</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_26e35a63-2804-4448-bcb1-af59bc505ae3">
+          <semantic:text>1</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_5ac6360d-b347-4719-86fc-7341d4b90225">
+        <semantic:inputEntry id="_28a98070-ac0b-4753-acb5-a54f9e325da0">
+          <semantic:text>"STANDARD"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_cb27e582-b805-4f6e-94d4-16e23720be21">
+          <semantic:text>[100..500)</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_f34cd0bb-eda0-4951-83c9-c0d81f5164f7">
+          <semantic:text>3</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_331456cf-8a1b-439b-8474-dc2b95bd1cca">
+        <semantic:inputEntry id="_f927d354-47a5-489c-869f-c1573caf188e">
+          <semantic:text>"SILVER"</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_9a4f02cb-c06b-4d55-a30a-8e057f0eb3d3">
+          <semantic:text>[100..500)</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_b43609d2-d9eb-4586-8ebd-111a0fb48b1b">
+          <semantic:text>2</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+      <semantic:rule id="_80fbe0a0-aca3-4935-b87d-ea93cd76c07b">
+        <semantic:inputEntry id="_b7872af8-4d24-415f-8645-d01149b05193">
+          <semantic:text>-</semantic:text>
+        </semantic:inputEntry>
+        <semantic:inputEntry id="_984161bd-9402-48ec-b9e4-cf343e666186">
+          <semantic:text>&gt;= 500</semantic:text>
+        </semantic:inputEntry>
+        <semantic:outputEntry id="_c698bde1-5f77-4a2c-8bb9-b3a6b823fe31">
+          <semantic:text>5</semantic:text>
+        </semantic:outputEntry>
+      </semantic:rule>
+    </semantic:decisionTable>
+  </semantic:decision>
+  <semantic:decision id="_2523907c-978f-4f2e-a9cb-3d349c83c335" name="Process Automatically">
+    <semantic:variable id="_300bd11a-c47b-4898-ae37-9c7c374c2a59" name="Process Automatically" typeRef="feel:boolean"/>
+    <semantic:informationRequirement>
+      <semantic:requiredDecision href="#_c4f764e7-52d0-489e-a1df-fe264a8615bf"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredDecision href="#_7806a972-6dc1-46b3-81e7-ff48ac763f0f"/>
+    </semantic:informationRequirement>
+    <semantic:literalExpression id="_aa87a2f5-0b97-42ca-a522-676ca6bc633d">
+      <semantic:text>(Cardholder Risk Rating + Dispute Risk Rating) &lt; 5</semantic:text>
+    </semantic:literalExpression>
+  </semantic:decision>
+</semantic:definitions>
