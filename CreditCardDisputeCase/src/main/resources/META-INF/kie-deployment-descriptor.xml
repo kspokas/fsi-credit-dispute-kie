@@ -34,9 +34,15 @@
         </work-item-handler>
         <work-item-handler>
             <resolver>mvel</resolver>
-            <identifier>new org.jbpm.process.workitem.email.EmailWorkItemHandler("smtp.gmail.com","587","keudysmtp@gmail.com","M@ilP@ssw0rd", "true")</identifier>
+            <identifier>new org.jbpm.process.workitem.email.EmailWorkItemHandler("localhost","25","test@localhost","password", "true")</identifier>
             <parameters/>
             <name>Email</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new org.jbpm.process.workitem.bpmn2.BusinessRuleTaskHandler("com.entando.bpm.fsi","credit-dispute-decisions","1.0-SNAPSHOT")</identifier>
+            <parameters/>
+            <name>BusinessRuleTask</name>
         </work-item-handler>
     </work-item-handlers>
     <environment-entries/>
