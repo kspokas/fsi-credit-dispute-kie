@@ -1,7 +1,15 @@
 package com.fsi.creditcarddisputecase;
 
+rule "Additional info check"
+    agenda-group "additional-info"
+when
+
+then
+    System.err.println("Looking for additional info!");
+end;
+
 rule "Online purchases DC Area by minor"
-    ruleflow-group "additional-info"
+    agenda-group "additional-info"
 when Cardholder( stateCode in ("VA","DC","MD") )
 then
     AdditionalInformation additionalInfo = new AdditionalInformation();
@@ -12,7 +20,7 @@ then
 end;
 
 rule "New York travel rule for Gold level cardholders"
-    ruleflow-group "additional-info"
+    agenda-group "additional-info"
 when Cardholder ( stateCode == "NY", status == "GOLD" )
 then
     AdditionalInformation additionalInfo = new AdditionalInformation();
