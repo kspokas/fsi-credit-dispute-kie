@@ -12,8 +12,24 @@
       <include>true</include>
       <metadata>
         <id>local</id>
-        <url>/Users/kspokas/.m2/repository</url>
+        <url>/Users/keudy/.m2/repository</url>
         <source>LOCAL</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>redhat-ga-plugin-repository</id>
+        <url>https://maven.repository.redhat.com/ga</url>
+        <source>SETTINGS</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>jboss-ga-repository</id>
+        <url>https://maven.repository.redhat.com/ga</url>
+        <source>SETTINGS</source>
       </metadata>
     </repository>
     <repository>
