@@ -2,10 +2,10 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.fsi-credit-dispute</groupId>
-  <artifactId>dispute-decisions</artifactId>
+  <groupId>com.entando.bpm.fsi</groupId>
+  <artifactId>credit-dispute-decisions</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>CreditCardDisputeDecisions</name>
+  <name>Credit Card Dispute Decisions</name>
   <description>Holds the DMN and Drools assets for dynamic logic in case</description>
   <dependencies>
     <dependency>
