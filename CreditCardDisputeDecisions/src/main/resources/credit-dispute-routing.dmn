@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<semantic:definitions xmlns:semantic="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.trisotech.com/dmn/definitions/_0a877079-34fe-4179-b67d-acb90045dbcb" xmlns:feel="http://www.omg.org/spec/FEEL/20140401" xmlns:tc="http://www.omg.org/spec/DMN/20160719/testcase" xmlns:triso="http://www.trisotech.com/2015/triso/modeling" xmlns:trisofeed="http://trisotech.com/feed" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="DMN Modeler" exporterVersion="6.0.6"
-  id="_1" 
+<semantic:definitions xmlns:semantic="http://www.omg.org/spec/DMN/20151101/dmn.xsd"
+  xmlns="http://www.trisotech.com/dmn/definitions/_0a877079-34fe-4179-b67d-acb90045dbcb"
+  xmlns:feel="http://www.omg.org/spec/FEEL/20140401"
+  xmlns:tc="http://www.omg.org/spec/DMN/20160719/testcase"
+  xmlns:triso="http://www.trisotech.com/2015/triso/modeling"
+  xmlns:trisofeed="http://trisotech.com/feed"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:kie="https://www.drools.org/kie-dmn"
+  exporter="DMN Modeler" exporterVersion="6.0.6"
+  id="_1"
   name="credit-dispute-routing"
   namespace="http://www.entando.com/_0a877079-34fe-4179-b67d-acb90045dbcb">
   <semantic:extensionElements/>
-  <semantic:itemDefinition label="com.fsi.creditcarddisputecase.Cardholder" name="com.fsi.creditcarddisputecase.Cardholder">
+  <semantic:itemDefinition id="_tCardholder" name="tCardholder">
     <semantic:itemComponent id="_5303d7b7-d5bb-4c94-a776-2e53c8a66160" name="stateCode">
       <semantic:typeRef>feel:string</semantic:typeRef>
     </semantic:itemComponent>
@@ -22,7 +31,7 @@
     </semantic:itemComponent>
   </semantic:itemDefinition>
   <semantic:inputData id="_06910a03-dfb6-439c-939f-6c4510d35cfa" name="Cardholder">
-    <semantic:variable id="_2dfa8de1-f93c-4781-891e-b04d9d729126" name="Cardholder" typeRef="com.fsi.creditcarddisputecase.Cardholder"/>
+    <semantic:variable id="_2dfa8de1-f93c-4781-891e-b04d9d729126" name="Cardholder" typeRef="tCardholder"/>
   </semantic:inputData>
   <semantic:decision id="_1fd9a9be-cc95-4304-b3cc-e8f167715c9a" name="Cardholder Risk">
     <semantic:variable id="_f99ee729-f6af-4b57-a036-cb46fd6fd5de" name="Cardholder Risk" typeRef="feel:number"/>
