@@ -34,3 +34,19 @@ end;
 query "get-additional-info"
     additionalInfo : AdditionalInformation()
 end;
+
+rule "Cleanup additional info"
+    agenda-group "cleanup"
+when
+    $addtionalInfo : AdditionalInformation()
+then
+    retract($additionalInfo);
+end;
+
+rule "Cleanup cardholder"
+    agenda-group "cleanup"
+when
+    $cardholder : Cardholder()
+then
+    retract($cardholder);
+end;
