@@ -9,20 +9,7 @@
     <width>150</width>
   </descriptionCol>
   <metadataCols/>
-  <attributeCols>
-    <attribute-column52>
-      <typedDefaultValue>
-        <valueString>additional-info</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </typedDefaultValue>
-      <hideColumn>true</hideColumn>
-      <width>100</width>
-      <attribute>ruleflow-group</attribute>
-      <reverseOrder>false</reverseOrder>
-      <useRowNumber>false</useRowNumber>
-    </attribute-column52>
-  </attributeCols>
+  <attributeCols/>
   <conditionPatterns>
     <Pattern52>
       <factType>Cardholder</factType>
@@ -167,11 +154,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>additional-info</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>&lt; 16</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -211,11 +193,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>additional-info</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>&lt; 17</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -251,11 +228,6 @@
       </value>
       <value>
         <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>additional-info</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
