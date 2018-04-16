@@ -16,7 +16,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>
-      <hideColumn>false</hideColumn>
+      <hideColumn>true</hideColumn>
       <width>100</width>
       <attribute>agenda-group</attribute>
       <reverseOrder>false</reverseOrder>
