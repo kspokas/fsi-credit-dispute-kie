@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "eaf51af2-74cb-41dd-8cd1-34459429cf37",
+		"name": "fsi-credit-dispute",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Run Additional Info Rules",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"lookup\" : null,\n  \"commands\" : [ {\n    \"insert\" : {\n      \"object\" : {\"com.fsi.creditcarddisputecase.Cardholder\":{\n  \"stateCode\" : \"VA\",\n  \"age\" : 35,\n  \"status\" : \"GOLD\",\n  \"incidentCount\" : 2,\n  \"balanceRatio\" : 0.2\n}},\n      \"out-identifier\" : \"cardholder\",\n      \"return-object\" : false,\n      \"entry-point\" : \"DEFAULT\",\n      \"disconnected\" : false\n    }\n  }, {\n    \"set-focus\" : {\n      \"name\" : \"additional-info\"\n    }\n  }, {\n    \"fire-all-rules\" : {\n      \"max\" : -1,\n      \"out-identifier\" : \"additional-info-fired\"\n    }\n  }, {\n    \"get-objects\" : {\n      \"class-object-filter\" : null,\n      \"out-identifier\" : \"questions\"\n    }\n  }, {\n    \"set-focus\" : {\n      \"name\" : \"cleanup\"\n    }\n  }, {\n    \"fire-all-rules\" : {\n      \"max\" : -1,\n      \"out-identifier\" : \"cleanup-fired\"\n    }\n  } ]\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/instances/credit-dispute-decisions_1.0-SNAPSHOT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"instances",
+						"credit-dispute-decisions_1.0-SNAPSHOT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get DMN Model",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-decisions_1.0-SNAPSHOT/dmn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"credit-dispute-decisions_1.0-SNAPSHOT",
+						"dmn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Evaluate DMN Model",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"model-namespace\" : \"http://www.entando.com/dmn/definitions/_c540edb3-4b27-4577-8863-1cf0267762b3\",\n  \"model-name\" : \"credit-dispute-simple-input\",\n  \"decision-name\" : [ ],\n  \"decision-id\" : [ ],\n  \"dmn-context\" : {\n  \t\"Age\" : 25,\n  \t\"Incident Count\": 3,\n\t\"Cardholder Status\": \"GOLD\",\n\t\"Fraud Amount\": 500\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-decisions_1.0-SNAPSHOT/dmn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"credit-dispute-decisions_1.0-SNAPSHOT",
+						"dmn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Case (Automated)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"case-data\" : { \n\t\"totalFraudAmount\" : 5,\n  \t\"customerStatus\" : \"GOLD\",\n  \t\"customerAge\" : 25,\n  \t\"incidentCount\" : 1\n  },\n  \"case-user-assignments\" : {\n  \t\"owner\" : \"krisv\",\n    \"fraud-manager\" : \"\"\n  },\n  \"case-group-assignments\" : {\n    \"fraud-manager\" : \"IT\"\n }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-case_1.0-SNAPSHOT/cases/CreditCardDisputeCase.FraudDispute/instances",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"credit-dispute-case_1.0-SNAPSHOT",
+						"cases",
+						"CreditCardDisputeCase.FraudDispute",
+						"instances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Case (Manual)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"case-data\" : { \n\t\"totalFraudAmount\" : 5000,\n  \t\"customerStatus\" : \"STANDARD\",\n  \t\"customerAge\" : 19,\n  \t\"incidentCount\" : 5\n  },\n  \"case-user-assignments\" : {\n  \t\"owner\" : \"krisv\",\n    \"fraud-manager\" : \"\"\n  },\n  \"case-group-assignments\" : {\n    \"fraud-manager\" : \"IT\"\n }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-case_1.0-SNAPSHOT/cases/CreditCardDisputeCase.FraudDispute/instances",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"credit-dispute-case_1.0-SNAPSHOT",
+						"cases",
+						"CreditCardDisputeCase.FraudDispute",
+						"instances"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "krisv",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "krisv",
+				"type": "string"
+			}
+		]
+	}
+}
